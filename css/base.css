@@ -325,10 +325,10 @@ pre {
 	left: 0px;
 	top: 0px;
 }
-#foot .left a:hover img {
+/*#foot .left a:hover img {
 	top: -31px;
 	transition: all 0.3s ease-in-out;
-}
+}*/
 #foot .left span {
 	margin-left: 16px;
 }

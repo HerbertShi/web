@@ -93,12 +93,7 @@ $(function(){
 		
 		//foot qq
 		$("#foot .end_qq").hover(function(){
-			$(this).find("img").stop(true,true).animate({"top":"-24px"},300);
-		},function(){
-			$(this).find("img").stop(true,true).animate({"top":"0"},300);
-		});
-		$("#foot .tel").hover(function(){
-			$(this).find("img").stop(true,true).animate({"top":"-30px"},300);
+			$(this).find("img").stop(true,true).animate({"top":"-31px"},300);
 		},function(){
 			$(this).find("img").stop(true,true).animate({"top":"0"},300);
 		});
