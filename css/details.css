@@ -35,21 +35,26 @@
 	background: #000;
 }
 .service {
+	top:-200%;
 	background: #023749 url(../images/service_bg.png) center top no-repeat;
 }
 .case {
+	top:-300%;
 	background: #267984 url(../images/case_bg.jpg) center top no-repeat;
 }
 .case_details {
 	background: #e6bf53;
 }
 .contactus {
+	top:-500%;
 	background: #efeff0;
 }
 .activity {
+	top:-400%;
 	background: #267984 url(../images/activity_bg.jpg) center top no-repeat;
 }
 .about {
+	top:-100%;
 	background: #000 url(../images/about_bg.jpg) no-repeat;
 }
 .activity, .case, .service, .index, .about {
@@ -91,14 +96,14 @@
 	background: url(../images/index_left_bg.png) left center no-repeat;
 	width: 265px;
 	height: 395px;
-	left: 0px;
+	left: -265px;
 	margin-top: -150px;
 }
 .index .right_bg {
 	background: url(../images/index_right_bg.png) right center no-repeat;
 	width: 279px;
 	height: 364px;
-	right: 0px;
+	right: -279px;
 	margin-top: -120px;
 }
 .index_content {
@@ -128,20 +133,20 @@
 	top: 80px;
 }
 .index_content .title.quality {
-	top: 40px;
+	top: 100px;
 	margin-left: -53px;
 }
 .index_content .title.idea {
 	top: 228px;
-	margin-left: -270px;
+	margin-left: -160px;
 }
 .index_content .title.ser {
 	top: 224px;
-	margin-left: 196px;
+	margin-left: 60px;
 }
 .index_content .quality .text {
 	margin-left: -80px;
-	margin-top: -112px;
+	margin-top: -150px;
 }
 .index_content .ser .text {
 	margin-left: 190px;
