@@ -212,7 +212,7 @@
 	top: 0px;
 }
 .service .title {
-	right: 96px;
+	right: 60px;
 	top: 167px;
 }
 .service .circle {
@@ -227,10 +227,11 @@
 	width: 418px;
 	height: 110px;
 	bottom: 10px;
-	left: 200px;
+	left: 230px;
 	padding-left: 22px;
 	padding-top: 17px;
 	color: #3a3a3a;
+	opacity: 0;
 }
 .service .right_circle .circle_text {
 	left: auto;

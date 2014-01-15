@@ -93,8 +93,8 @@ function aboutAnimate(){
 
 /*service*/
 function serviceAnimate(){
-	$("#serviceTitle").animate({"margin-left":"-182px"},1000,function(){
-		$(this).animate({"margin-left":"-162px"},500);
+	$("#serviceTitle").animate({"right":"220px"},1000,function(){
+		$(this).animate({"right":"166px"},500);
 	});
 	$("#service #serviceLeft").animate({"margin-left":"-450px","opacity":1},1000,function(){
 		$(this).animate({"margin-left":"-400px","opacity":1},500);
@@ -108,34 +108,32 @@ function serviceAnimate(){
 
 function serviceHover(){
 	var index  = 10;
-	$("#serviceLeft .serviceTip").hover(function(){
+	$("#serviceLeft>label").hover(function(){
 		var obg = $(this); index++;
 		obg.css("z-index",index);
-		obg.find(".service_detail").show(0).stop(true, false).delay(400).animate({"left":"-38px","opacity":0.3},300,function(){
-				$(this).animate({"left":"0","opacity":1},'slow');
+			obg.siblings(".circle_text").show(0).stop(true, false).delay(400).animate({"left":"180px","opacity":0.3},300,function(){
+				$(this).animate({"left":"200px","opacity":1},'slow');
 				
 			});
-			obg.addClass("active").find("em").stop(true, false).fadeIn();
+			//obg.addClass("active").find("em").stop(true, false).fadeIn();
 				
 			$("#service #serviceRight").stop(true, false).animate({"left":"45%","opacity":0.5},300,function(){
 				$(this).animate({"left":"100%","opacity":0},'slow');
 			});
-			$("#service .service_txt2").stop(true, false).animate({"margin-left":"-35px"},300,function(){
+			$("#service #serviceRight .s_title").stop(true, false).animate({"margin-left":"-35px"},300,function(){
 				$(this).animate({"margin-left":"0px"},'slow');
 			});
-			return false;	
-		
-		
+			return false;
 	},function(){
 		var obg = $(this);
-		obg.find(".service_detail").show(0).stop(true, false).animate({"left":"-38px","opacity":0.7},'slow',function(){
-				$(this).animate({"left":"58px","opacity":0},300,function(){
+		obg.siblings(".circle_text").show(0).stop(true, false).animate({"left":"180px","opacity":0.7},'slow',function(){
+				$(this).animate({"left":"230px","opacity":0},300,function(){
 					$(this).hide();
-					obg.removeClass("active").find("em").fadeOut();
+					//obg.removeClass("active").find("em").fadeOut();
 				});
 			});
 
-			$("#service .service_txt2").stop(true, false).delay(500).animate({"margin-left":"-35px"},'slow',function(){
+			$("#service #serviceRight .s_title").stop(true, false).delay(500).animate({"margin-left":"-35px"},'slow',function(){
 				$(this).animate({"margin-left":"0px"},500);
 
 			});

@@ -54,8 +54,7 @@ $(function(){
 
 				$("#" + menu[menuIndex - 1]).append(loading).load(menuUrl[menuIndex - 1], function() {
 					//加载完页面后执行当页动画
-					//Execution(menuIndex);
-					//$(this).css("top","-100%");
+					Execution(menuIndex);
 				})
 
 				if (position == "right") {
@@ -131,18 +130,18 @@ function Execution(i) {
 		case 1:
 			homeContent();
 			break;
-		case 2:
-			aboutAnimate();
-			break;
+		// case 2:
+		// 	aboutAnimate();
+		// 	break;
 		case 3:
 			serviceAnimate();
 			break;
-		case 4:
-			caseAnimate();
-			break;
-		case 5:
-			contactUsAnimate();
-			break;
+		// case 4:
+		// 	caseAnimate();
+		// 	break;
+		// case 5:
+		// 	contactUsAnimate();
+		// 	break;
 		default:
 			return false;
 			break;
