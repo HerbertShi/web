@@ -8,17 +8,21 @@ $(function(){
 	var menuUrl = ["home.html","about.html","service.html","case.html","contact.aspx"]; //栏目地址
 	var loading = '<div id="loading" style="position:absolute;top:0; left:0; width:100%; height:100%; z-index:1000; background:url(images/loading.gif) center center no-repeat;"></div>';
 	
-		$("#header").animate({"top":"80px"},400,function(){
-			$(this).animate({"top":"0px"},'slow',function(){
-				clearInterval(timer);
-				_menuA.eq(1).addClass("active").siblings().removeClass("active");
-				// $("#"+menu[0]).append(loading).load(menu[0]+".html",function(){
-				// 		//加载完页面后执行当页动画
-				// 		Execution(1);
-				// 	});
-				prevPage = 1;
+	$("#header").animate({
+		"top": "80px"
+	}, 400, function() {
+		$(this).animate({
+			"top": "0px"
+		}, 'slow', function() {
+			clearInterval(timer);
+			_menuA.eq(1).addClass("active").siblings().removeClass("active");
+			$("#" + menu[0]).append(loading).load(menuUrl[0], function() {
+				//加载完页面后执行当页动画
+				Execution(1);
 			});
+			prevPage = 1;
 		});
+	});
 		
 		
 		$("#foot").animate({"bottom":"40px"},450,function(){
