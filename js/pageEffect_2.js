@@ -432,14 +432,14 @@ function activityAnimate(){
 
 /*contact us*/
 function contactUsAnimate(){
-	$("#contactUsMap").animate({"margin-left":"105px"},1500,function(){
-		$(this).animate({"margin-left":"125px"},'slow');
+	$("#contactUsMap").animate({"margin-left":"-30px"},1500,function(){
+		$(this).animate({"margin-left":"0px"},'slow');
 	});
-	$("#contactInformation").animate({"margin-left":"-520px"},1000,function(){
-		$(this).animate({"margin-left":"-490px"},500);
+	$("#contactInformation").animate({"margin-right":"80px"},1000,function(){
+		$(this).animate({"margin-right":"50px"},500);
 	});
-	$("#contactUsTitle").animate({"margin-left":"-265px"},1500,function(){
-		$(this).animate({"margin-left":"-235px"},500)
+	$("#contactUsTitle").animate({"margin-right":"250px"},1500,function(){
+		$(this).animate({"margin-right":"220px"},500)
 	});
 }
 
