@@ -409,6 +409,27 @@ function detailMove(f,j){
 		});
 	}
 }
+
+/*activity*/
+function activityAnimate(){
+	$("#activity .left_menu").animate({"margin-right":"280px"},1000,function(){
+		$(this).animate({"margin-right":"180px"},500,function(){
+			$(this).animate({"margin-right":"200px"},"slow");
+		});
+	});
+
+	$("#activity .activity_content").animate({"margin-left":"-300px"},1000,function(){
+		$(this).animate({"margin-left":"-120px"},800,function(){
+			$(this).animate({"margin-left":"-160px"},"slow");
+		});
+	});
+
+	$("#activity .left_menu ul a").bind("click",function(){
+		$("#activity .left_menu ul a").removeClass("active");
+		$(this).addClass("active");
+	});
+}
+
 /*contact us*/
 function contactUsAnimate(){
 	$("#contactUsMap").animate({"margin-left":"105px"},1500,function(){

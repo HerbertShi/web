@@ -536,7 +536,7 @@
 /*企业动态*/
 .activity .left_menu {
 	width: 245px;
-	margin-right: 200px;
+	margin-right: 100px;
 	margin-top: -170px;
 	font-family: "宋体";
 	font-size: 12px;
@@ -584,7 +584,7 @@
 	background: #f6f6f6 url(../images/activity_content_bg.png) no-repeat;
 	width: 580px;
 	min-height: 407px;
-	margin-left: -160px;
+	margin-left: -60px;
 	margin-top: -162px;
 	padding-top: 30px;
 	padding-left: 32px;

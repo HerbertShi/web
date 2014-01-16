@@ -139,9 +139,12 @@ function Execution(i) {
 		// case 4:
 		// 	caseAnimate();
 		// 	break;
-		// case 5:
-		// 	contactUsAnimate();
-		// 	break;
+		case 5:
+			activityAnimate();
+			break;
+		case 6:
+			contactUsAnimate();
+			break;
 		default:
 			return false;
 			break;
