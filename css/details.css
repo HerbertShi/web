@@ -477,7 +477,7 @@
 }
 .contactus .title {
 	margin-top: -250px;
-	margin-right: 0px;
+	margin-right: 80px;
 }
 .contactus hr {
 	border-top: 1px solid #d5d5d5;
@@ -498,7 +498,7 @@
 	height: 480px;
 	margin-top: -130px;
 	text-align: center;
-	margin-left: 220px;
+	margin-left: 140px;
 }
 .contactus .right_map p {
 	color: #363636;
