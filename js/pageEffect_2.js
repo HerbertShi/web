@@ -93,14 +93,32 @@ function aboutAnimate(){
 
 /*service*/
 function serviceAnimate(){
-	$("#serviceTitle").animate({"right":"220px"},1000,function(){
-		$(this).animate({"right":"166px"},500);
+	$("#serviceTitle").animate({
+		"right": "120px"
+	}, 1000, function() {
+		$(this).animate({
+			"right": "86px"
+		}, 500);
 	});
-	$("#service #serviceLeft").animate({"margin-left":"-450px","opacity":1},1000,function(){
-		$(this).animate({"margin-left":"-400px","opacity":1},500);
+
+	$("#service #serviceLeft").animate({
+		"margin-left": "-280px",
+		"opacity": 1
+	}, 1000, function() {
+		$(this).animate({
+			"margin-left": "-200px",
+			"opacity": 1
+		}, 500);
 	});
-	$("#service #serviceRight").animate({"margin-left":"238px","opacity":1},1000,function(){
-		$(this).animate({"margin-left":"188px","opacity":1},500);
+
+	$("#service #serviceRight").animate({
+		"margin-left": "158px",
+		"opacity": 1
+	}, 1000, function() {
+		$(this).animate({
+			"margin-left": "100px",
+			"opacity": 1
+		}, 500);
 		serviceHover()
 	});
 	
@@ -134,7 +152,7 @@ function serviceHover(){
 			});
 
 			$("#service #serviceRight .s_title").stop(true, false).delay(500).animate({"margin-left":"-35px"},'slow',function(){
-				$(this).animate({"margin-left":"0px"},500);
+				$(this).animate({"margin-left":"-70px"},500);
 
 			});
 			$("#service #serviceRight").stop(true, false).delay(500).animate({"left":"45%","opacity":0.5},'slow',function(){
