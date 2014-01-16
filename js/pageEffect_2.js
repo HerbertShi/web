@@ -25,11 +25,15 @@ function homeContent() {
 }
 
 function homeContentTitle(){
-	$("#home .title.idea").animate({"margin-left":"-270px"},'slow');
-	$("#home .title.quality").animate({"top":"40px"},'slow');
-	$("#home .title.ser").animate({"margin-left":"196px"},'slow',function(){
+	$("#home .title.idea").animate({"margin-left":"-290px"},1000,function(){
+		$(this).animate({"margin-left":"-270px"},500);
+	});
+	$("#home .title.quality").animate({"top":"20px"},1000,function(){
+		$(this).animate({"top":"40px"},500);
+	});
+	$("#home .title.ser").animate({"margin-left":"216px"},1000,function(){
 		leftRightPic();
-		$("#page").fadeIn();
+		$(this).animate({"margin-left":"196px"},500);
 	});
 }
 
@@ -102,7 +106,7 @@ function serviceAnimate(){
 	});
 
 	$("#service #serviceLeft").animate({
-		"margin-left": "-280px",
+		"margin-left": "-230px",
 		"opacity": 1
 	}, 1000, function() {
 		$(this).animate({
@@ -112,7 +116,7 @@ function serviceAnimate(){
 	});
 
 	$("#service #serviceRight").animate({
-		"margin-left": "158px",
+		"margin-left": "138px",
 		"opacity": 1
 	}, 1000, function() {
 		$(this).animate({
