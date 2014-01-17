@@ -1,13 +1,13 @@
 @charset "utf-8";
 @import url("base.css");
-.index, .about, .service, .case, .case_details, .contactus, .activity {
+.index, .about, .service, .case, .case_details, .contactus, .activity,#case {
 	left: 0px;
 	top: 0px;
 	height: 100%;
 	width: 100%;
 	min-width: 1000px;
 }
-.index, .about, .service, .case, .case_details, .contactus, .activity,.scroll, .circle, .index_content, .index_content .down_shadow, .index_content .index_img, .index_content .dotted, .index_content .title, .index_content .text, .about .title, .about .right_quality, .about .right_idea, .about .right_service, .about .about_text, .service .top_bg, .service .title, .service .circle_text, .service .s_title, .case_content, .case_content a .bottom_shadow, .case .case_text, .case .case_next, .case_details .title, .case_details .dotted, .case_details .dotted a img, .case_details_content, .case_details_content .img a span, .case_details .up_arrow, .case_details .down_arrow, .case_show_content, .case_show_content .right_describe, .contactus .left_form, .contactus .title, .contactus hr, .contactus .menu, .contactus .right_map, .contactus .map span, .contactus .map .map_shadow, .activity .left_menu, .activity_content, #Content .left_bg, #Content .right_bg ,.case_content a{
+#case,.index, .about, .service, .case, .case_details, .contactus, .activity,.scroll, .circle, .index_content, .index_content .down_shadow, .index_content .index_img, .index_content .dotted, .index_content .title, .index_content .text, .about .title, .about .right_quality, .about .right_idea, .about .right_service, .about .about_text, .service .top_bg, .service .title, .service .circle_text, .service .s_title, .case_content, .case_content a .bottom_shadow, .case .case_text, .case .case_next, .case_details .title, .case_details .dotted, .case_details .dotted a img, .case_details_content, .case_details_content .img a span, .case_details .up_arrow, .case_details .down_arrow, .case_show_content, .case_show_content .right_describe, .contactus .left_form, .contactus .title, .contactus hr, .contactus .menu, .contactus .right_map, .contactus .map span, .contactus .map .map_shadow, .activity .left_menu, .activity_content, #Content .left_bg, #Content .right_bg ,.case_content a{
 	position: absolute;
 }
 .scroll span, .case_details .dotted a, .case_details_content .img a, .contactus .map, .contactus .map img, .activity .left_menu a i{
