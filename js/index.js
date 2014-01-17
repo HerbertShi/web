@@ -126,6 +126,7 @@ $(function(){
 
 //执行的动画
 function Execution(i) {
+	$("#foot").slideDown();
 	switch (i) {
 		case 1:
 			homeContent();
@@ -136,9 +137,10 @@ function Execution(i) {
 		case 3:
 			serviceAnimate();
 			break;
-		// case 4:
-		// 	caseAnimate();
-		// 	break;
+		case 4:
+		$("#foot").slideUp();
+			//caseAnimate();
+			break;
 		case 5:
 			activityAnimate();
 			break;
