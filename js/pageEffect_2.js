@@ -221,6 +221,21 @@ function caseAnimate(){
 	$("#casePrev").animate({"margin-left":"-560px"},1300);
 	$("#caseNext").animate({"margin-left":"520px"},1300);
 }
+
+function caseDetailAnimate() {
+	$("#case .case_next").bind("click", function(){
+		$("#" + menu[aIndex - 1]).animate({
+			"top": "-100%"
+		}, 'slow'); $("#" + menu[menuIndex - 1]).animate({
+			"top": "-3%"
+		}, 'slow', function() {
+			$(this).animate({
+				"top": "0%"
+			}, 'slow');
+		});
+	});
+}
+
 function init(){
 	n = $("#caseContent ul").size();
 	count = $("#caseDetailContent li").size();

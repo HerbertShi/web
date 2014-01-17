@@ -7,7 +7,8 @@ $(function(){
 	var menu = ["home","about","service","case","activity","contactus"]; //栏目文件名
 	var menuUrl = ["home.html","about.html","service.html","case.html","activity.html","contact.html"]; //栏目地址
 	var loading = '<div id="loading" style="position:absolute;top:0; left:0; width:100%; height:100%; z-index:1000; background:url(images/loading.gif) center center no-repeat;"></div>';
-	
+	var logoName =["logo","logo_green","logo_white","logo_white","logo_green","logo"];
+
 	$("#header").animate({
 		"top": "80px"
 	}, 400, function() {
@@ -140,6 +141,7 @@ function Execution(i) {
 		case 4:
 		$("#foot").slideUp();
 			//caseAnimate();
+			caseDetailAnimate();
 			break;
 		case 5:
 			activityAnimate();
