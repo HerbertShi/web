@@ -7,10 +7,10 @@
 	width: 100%;
 	min-width: 1000px;
 }
-.scroll, .circle, .index_content, .index_content .down_shadow, .index_content .index_img, .index_content .dotted, .index_content .title, .index_content .text, .about .title, .about .right_quality, .about .right_idea, .about .right_service, .about .about_text, .service .top_bg, .service .title, .service .circle_text, .service .s_title, .case_content, .case_content a .bottom_shadow, .case .case_text, .case .case_next, .case_details .title, .case_details .dotted, .case_details .dotted a img, .case_details_content, .case_details_content .img a span, .case_details .up_arrow, .case_details .down_arrow, .case_show_content, .case_show_content .right_describe, .contactus .left_form, .contactus .title, .contactus hr, .contactus .menu, .contactus .right_map, .contactus .map span, .contactus .map .map_shadow, .activity .left_menu, .activity_content, #Content .left_bg, #Content .right_bg {
+.index, .about, .service, .case, .case_details, .contactus, .activity,.scroll, .circle, .index_content, .index_content .down_shadow, .index_content .index_img, .index_content .dotted, .index_content .title, .index_content .text, .about .title, .about .right_quality, .about .right_idea, .about .right_service, .about .about_text, .service .top_bg, .service .title, .service .circle_text, .service .s_title, .case_content, .case_content a .bottom_shadow, .case .case_text, .case .case_next, .case_details .title, .case_details .dotted, .case_details .dotted a img, .case_details_content, .case_details_content .img a span, .case_details .up_arrow, .case_details .down_arrow, .case_show_content, .case_show_content .right_describe, .contactus .left_form, .contactus .title, .contactus hr, .contactus .menu, .contactus .right_map, .contactus .map span, .contactus .map .map_shadow, .activity .left_menu, .activity_content, #Content .left_bg, #Content .right_bg {
 	position: absolute;
 }
-.index, .about, .service, .case, .case_details, .contactus, .activity, .scroll span, .case_details .dotted a, .case_details_content .img a, .contactus .map, .contactus .map img, .activity .left_menu a i, .case_content a {
+.scroll span, .case_details .dotted a, .case_details_content .img a, .contactus .map, .contactus .map img, .activity .left_menu a i, .case_content a {
 	position: relative;
 }
 .circle, .index_content, .index_content .down_shadow, .index_content .index_img, .index_content .dotted, .index_content .title, .index_content .text, .about .right_quality, .about .right_idea, .about .right_service, .service .top_bg, .service .s_title, .case_content, .case .case_text, .case .case_next, .case_details .dotted, .case_details_content, .case_details .up_arrow, .case_details .down_arrow, .case_show_content, .contactus hr, .contactus .menu, .contactus .right_map, .activity_content {
@@ -35,26 +35,21 @@
 	background: #000;
 }
 .service {
-	top:-200%;
 	background: #023749 url(../images/service_bg.png) center top no-repeat;
 }
 .case {
-	top:-300%;
 	background: #267984 url(../images/case_bg.jpg) center top no-repeat;
 }
 .case_details {
 	background: #e6bf53;
 }
 .contactus {
-	top:-500%;
 	background: #efeff0;
 }
 .activity {
-	top:-400%;
 	background: #267984 url(../images/activity_bg.jpg) center top no-repeat;
 }
 .about {
-	top:-100%;
 	background: #000 url(../images/about_bg.jpg) no-repeat;
 }
 .activity, .case, .service, .index, .about {
