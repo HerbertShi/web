@@ -259,11 +259,16 @@ function caseAnimate(){
 }
 
 function caseDetailAnimate() {
+
 	$("#case .case_next").bind("click", function() {
-		$(this).animate({
+		$("#case .case_content a").eq(0).trigger("click");
+	});
+
+	$("#case .case_content a").bind("click",function(){
+		$("#case .case").animate({
 			"top": "-100%"
 		}, 'slow');
-		$("#case .case_details").animate({
+		$("#case .case_details").eq($(this).index()).animate({
 			"top": "-3%"
 		}, 'slow', function() {
 			$(this).animate({
@@ -271,6 +276,7 @@ function caseDetailAnimate() {
 			}, 'slow');
 		});
 	});
+
 }
 
 function init(){
