@@ -84,14 +84,15 @@ function homeContetAnimate() {
 
 /*about*/
 function aboutAnimate(){
-	$("#aboutRight_radus").animate({"margin-left":"150px"},1000);
-	$("#aboutLeft_text").animate({"margin-left":"-520px","opacity":1},1000,function(){
-		$(this).animate({"margin-left":"-500px"},500);
+	//$("#aboutRight_radus").animate({"margin-left":"150px"},1000);
+	$("#about .about_text").animate({"margin-right":"-520px","opacity":1},1000,function(){
+		$(this).animate({"margin-right":"-30px"},500);
 	});
-	$("#aboutLeft_text h1").animate({"margin-left":"-28px","opacity":1},1000,function(){
-		$(this).animate({"margin-left":"-3px"},500);
+
+	$("#about .title").animate({"margin-right":"98px","opacity":1},1000,function(){
+		$(this).animate({"margin-right":"68px"},500);
 	});
-	$("#aboutLeft_text .textStyle").animate({"opacity":1},1000);
+
 }
 
 

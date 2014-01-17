@@ -307,8 +307,12 @@ pre {
 #foot a:hover, #foot a.active {
 	color: #42aeb1;
 }
-#foot .left, #foot .right {
-	width: 310px;
+#foot .left {
+	text-align:left;
+	width: 400px;
+}
+#foot .right{
+ 	width: 200px;
 }
 #foot .left a {
 	margin-right: 8px;

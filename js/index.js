@@ -132,9 +132,9 @@ function Execution(i) {
 		case 1:
 			homeContent();
 			break;
-		// case 2:
-		// 	aboutAnimate();
-		// 	break;
+		case 2:
+			aboutAnimate();
+			break;
 		case 3:
 			serviceAnimate();
 			break;

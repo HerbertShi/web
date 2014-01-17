@@ -163,8 +163,9 @@
 /*关于*/
 
 .about .title {
-	margin-right: 68px;
+	margin-right: -190px;
 	margin-top: -145px;
+	opacity: 0.4;
 }
 .about .right_quality {
 	margin-left: 340px;
@@ -183,6 +184,7 @@
 	height: 215px;
 	margin-right: -30px;
 	margin-top: -30px;
+	opacity: 0;
 }
 /*服务*/
 .service .left_bg {
