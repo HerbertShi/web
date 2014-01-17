@@ -84,13 +84,48 @@ function homeContetAnimate() {
 
 /*about*/
 function aboutAnimate(){
-	//$("#aboutRight_radus").animate({"margin-left":"150px"},1000);
-	$("#about .about_text").animate({"margin-right":"-520px","opacity":1},1000,function(){
-		$(this).animate({"margin-right":"-30px"},500);
+	$("#about .right_quality").animate({
+		"margin-left": "310px",
+		"opacity": 1
+	}, 1000, function() {
+		$(this).animate({
+			"margin-left": "340px"
+		}, 500);
 	});
 
-	$("#about .title").animate({"margin-right":"98px","opacity":1},1000,function(){
-		$(this).animate({"margin-right":"68px"},500);
+	$("#about .right_idea").animate({
+		"margin-left": "220px",
+		"opacity": 1
+	}, 1000, function() {
+		$(this).animate({
+			"margin-left": "250px"
+		}, 500);
+	});
+
+	$("#about .right_service").animate({
+		"margin-left": "340px",
+		"opacity": 1
+	}, 1000, function() {
+		$(this).animate({
+			"margin-left": "370px"
+		}, 500);
+	});
+	$("#about .about_text").animate({
+		"margin-right": "-10px",
+		"opacity": 1
+	}, 1500, function() {
+		$(this).animate({
+			"margin-right": "-30px"
+		}, 500);
+	});
+
+	$("#about .title").animate({
+		"margin-right": "98px",
+		"opacity": 1
+	}, 1500, function() {
+		$(this).animate({
+			"margin-right": "68px"
+		}, 500);
 	});
 
 }
