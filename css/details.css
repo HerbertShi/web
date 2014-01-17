@@ -41,7 +41,7 @@
 	background: #267984 url(../images/case_bg.jpg) center top no-repeat;
 }
 .case_details {
-	background: #e6bf53;
+	background: #42AEB1;
 }
 .contactus {
 	background: #efeff0;
@@ -283,7 +283,7 @@
 	-khtml-opacity: 0.2; /* khtml, old safari */
 }
 .case_content a:hover {
-	margin-top:-60px;
+	margin-top:-110px;
 }
 .case_content a:hover .bottom_shadow {
 	opacity: 1; /* 透明度 */
@@ -630,7 +630,7 @@
 	background: #ffffaa;
 }
 .blue_bg{
-	background: #42AEB1;
+	background: #e6bf53;
 }
 .green_bg{
 	background:#97D610 ;

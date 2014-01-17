@@ -223,10 +223,11 @@ function caseAnimate(){
 }
 
 function caseDetailAnimate() {
-	$("#case .case_next").bind("click", function(){
-		$("#" + menu[aIndex - 1]).animate({
+	$("#case .case_next").bind("click", function() {
+		$(this).animate({
 			"top": "-100%"
-		}, 'slow'); $("#" + menu[menuIndex - 1]).animate({
+		}, 'slow');
+		$("#case .case_details").animate({
 			"top": "-3%"
 		}, 'slow', function() {
 			$(this).animate({
