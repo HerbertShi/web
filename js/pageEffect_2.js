@@ -248,6 +248,7 @@ function caseAnimate() {
 	});
 
 	$("#case .case_content a").bind("click", function() {
+		$("#foot").slideDown();
 		var detailsIndex = $(this).index();
 		var details = $(".case_details").eq(detailsIndex);
 		$(details).append(loading).load(detailsUrl[detailsIndex], function() {
