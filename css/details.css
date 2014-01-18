@@ -59,6 +59,7 @@
 	width: 4px;
 	right: 0px;
 	top: 0px;
+	overflow: hidden;
 }
 .scroll span {
 	display: inline-block;
