@@ -140,8 +140,7 @@ function Execution(i) {
 			break;
 		case 4:
 		$("#foot").slideUp();
-			//caseAnimate();
-			caseDetailAnimate();
+			caseAnimate();
 			break;
 		case 5:
 			activityAnimate();

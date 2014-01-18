@@ -240,231 +240,160 @@ function serviceHover(){
 
 
 /*case*/
-function caseAnimate(){
-	init();
-	$("#caseTitle").animate({"margin-left":"290px","opacity":1},1000,function(){
-		$(this).animate({"margin-left":"270px"},500);
-	});
-	$("#case .caseTip").eq(0).animate({"margin-left":"-325px","opacity":1},1000,function(){
-		$(this).animate({"margin-left":"-275px"},500);
-	});
-	$("#case .caseTip").eq(1).animate({"margin-left":"210px","opacity":1},1000,function(){
-		$(this).animate({"margin-left":"160px"},500);
-		caseShow();
-	});
-	
-	$("#case_sj").animate({"margin-left":"-503px","opacity":1},1000);
-	$("#casePrev").animate({"margin-left":"-560px"},1300);
-	$("#caseNext").animate({"margin-left":"520px"},1300);
-}
-
-function caseDetailAnimate() {
-
+function caseAnimate() {
+	var detailsUrl = ["case_details.html", "case_details_green.html", "case_details_blue.html", "case_details_green_blue.html"]; //案例地址
+	var loading = '<div id="loading" style="position:absolute;top:0; left:0; width:100%; height:100%; z-index:1000; background:url(images/loading.gif) center center no-repeat;"></div>';
 	$("#case .case_next").bind("click", function() {
 		$("#case .case_content a").eq(0).trigger("click");
 	});
 
-	$("#case .case_content a").bind("click",function(){
-		$("#case .case").animate({
-			"top": "-100%"
-		}, 'slow');
-		$("#case .case_details").eq($(this).index()).animate({
+	$("#case .case_content a").bind("click", function() {
+		var detailsIndex = $(this).index();
+		var details = $(".case_details").eq(detailsIndex);
+		$(details).append(loading).load(detailsUrl[detailsIndex], function() {
+			caseDetailAnimate(detailsIndex);
+		});
+		$(details).animate({
 			"top": "-3%"
 		}, 'slow', function() {
 			$(this).animate({
 				"top": "0%"
 			}, 'slow');
 		});
+		$("#case .case").animate({
+			"top": "-100%"
+		}, 'slow');
 	});
 
-}
+	function caseDetailAnimate(i) {
+		var d = $(".case_details").eq(i);
+		$(d).find(".dotted a").bind("click", function() {
+			var detailsIndex = $(this).index();
+			var details = $(".case_details").eq(detailsIndex);
+			if ($(details).css("top").split("px")[0] > 0) {
+				$(details).append(loading).load(detailsUrl[detailsIndex], function() {
+					caseDetailAnimate(detailsIndex);
+				});
+				$(d).animate({
+					"top": "-100%"
+				}, 'slow',function(){
+					$(this).empty();
+				});
+				$(details).animate({
+					"top": "-3%"
+				}, 'slow', function() {
+					$(this).animate({
+						"top": "0%"
+					}, 'slow');
+				});
+			} else if ($(details).css("top").split("px")[0] < 0) {
+				$(details).append(loading).load(detailsUrl[detailsIndex], function() {
+					caseDetailAnimate(detailsIndex);
+				});
+				$(d).animate({
+					"top": "100%"
+				}, 'slow',function(){
+					$(this).empty();
+				});
+				$(details).animate({
+					"top": "3%"
+				}, 'slow', function() {
+					$(this).animate({
+						"top": "0%"
+					}, 'slow');
+				});
+			}
+		});
 
-function init(){
-	n = $("#caseContent ul").size();
-	count = $("#caseDetailContent li").size();
-	$("#case_sj #caseContent").css({"width":n*1016+"px","left":"0px"});
-	$("#caseDetailContent ul").css({"width":count*848+"px","left":"0px"});
-	
-	$("#casePrev,#caseDetailPrev").animate({"opacity":0.2},'slow').css("cursor","default");
-	$("#caseNext,#caseDetailNext").animate({"opacity":1},'slow').css("cursor","pointer");
-	
-	listIndex=0;
-	detailIndex=0;
-}
-function caseShow(){
-	caseListShow();
-	//$("#case .caseTip").unbind().bind("click",function(){
-//		init();
-//		$(this).addClass("active").find("em").fadeIn().parent().siblings(".caseTip").removeClass("active").find("em").fadeOut();
-//		$("#case_detail_sj").animate({"top":"-380px","opacity":0},'slow');
-//		
-//		$("#case_sj").animate({"top":"40%","opacity":1},500,function(){
-//			$(this).animate({"top":"60%"},300,function(){
-//				$(this).animate({"top":"50%"},200);
-//				caseListShow();
-//			});
-//		});
-//		$("#casePrev,#caseNext").animate({"top":"40%"},550,function(){
-//			$(this).animate({"top":"60%"},300,function(){
-//				$(this).animate({"top":"50%"},200);
-//			});
-//		});
-//	});
-	$("#case #backList").unbind().bind("click",function(){
-		//init();
-		$("#case_detail_sj").animate({"top":"-380px","opacity":0},'slow');
-		
-		$("#case_sj").animate({"top":"40%","opacity":1},500,function(){
-			$(this).animate({"top":"60%"},300,function(){
-				$(this).animate({"top":"50%"},200);
-				caseListShow();
+		$(d).find(".case_details_content a").bind("click", function() {
+			detailShow($(this).index());
+			$(d).children(".title,.case_details_content").animate({
+				"top": "45%"
+			}, "slow", function() {
+				$(this).animate({
+					"top": "155%"
+				}, "slow", function() {
+					$(this).animate({
+						"top": "150%"
+					}, "slow");
+				});
+			});
+
+			$(d).children(".case_show_content").animate({
+				"top": "-155%"
+			}, "slow", function() {
+				$(this).animate({
+					"top": "55%"
+				}, "slow", function() {
+					$(this).animate({
+						"top": "50%"
+					}, "slow");
+				});
 			});
 		});
-		$("#casePrev,#caseNext").animate({"top":"40%"},550,function(){
-			$(this).animate({"top":"60%"},300,function(){
-				$(this).animate({"top":"50%"},200);
+
+		var imgDivWidth = ($(d).find(".case_details_content .img a").width() + 10)*$(d).find(".case_details_content .img a").size()/2;
+
+		$(d).find(".case_details_content .img").width(imgDivWidth+10).css("position","relative");
+		$(d).find(".down_arrow").bind("click",function(){
+			$(d).find(".case_details_content .img").animate({"left":$(d).find(".case_details_content").width()-imgDivWidth-100+"px"},"slow",function(){
+				$(this).animate({"left":$(d).find(".case_details_content").width()-imgDivWidth+"px"},"slow");
 			});
 		});
-	});
-	
-	$("#case_sj li").hover(function(){
-			$(this).find("p").stop(true,true).animate({"bottom":"0px"},500);
-	},function(){
-			$(this).find("p").stop(true,true).animate({"bottom":"-32px"},500);
-	}).click(function(){
-		//var detailPic = $(this).attr("detailPic");
-//		var detailTitle = $(this).attr("detailTitle");
-//		var detailLink = $(this).attr("detailLink");
-//		var datailContent = $(this).attr("datailContent");
-//		
-//		$("#case_detail_sj").find("img").attr("src",detailPic);
-//		$("#case_detail_sj").find(".case_detail_text").find("h1").text(detailTitle);
-//		$("#case_detail_sj").find(".case_detail_text").find("a").text(detailLink).attr("href",detailLink);
-//		$("#case_detail_sj").find(".case_detail_text").find("div").html(datailContent);
+
+		$(d).find(".up_arrow").bind("click",function(){
+			$(d).find(".case_details_content .img").animate({"left":"100px"},"slow",function(){
+				$(this).animate({"left":"0px"},"slow");
+			});
+		});
+
 		
-		var index = $(this).attr("index");
-		//alert($("#case_sj li").eq(8).attr("src"));
-		if(index){
-			detailIndex = index;
-			$("#caseDetailContent ul").css({"left":-detailIndex*848+"px"});
-			if(index<=0){
-				$("#caseDetailPrev").animate({"opacity":0.2},'slow').css("cursor","default");
-			}else if(index>=count-1){
-				$("#caseDetailNext").animate({"opacity":0.2},'slow').css("cursor","default");
-			}else{
-				$("#caseDetailPrev,#caseDetailNext").animate({"opacity":1},'slow').css("cursor","pointer");
-			}
-		}else{
-			window.open("http://www.bangdream.com/works.aspx");
-			return false;
-		}
-		$("#case_detail_sj").delay(200).animate({"top":"60%","opacity":1},500,function(){
-			$(this).animate({"top":"48%"},200,function(){
-				$(this).animate({"top":"50%"},200)
-			})
-		});
-		$("#caseDetailPrev,#caseDetailNext").delay(200).animate({"top":"60%"},520,function(){
-			$(this).animate({"top":"48%"},200,function(){
-				$(this).animate({"top":"50%"},200);
-				detailClick();
-			})
-		});
-		$("#case_sj").animate({"top":"40%"},200,function(){
-			$(this).animate({"top":"150%","opacity":0},500);
-		});
-		$("#casePrev,#caseNext").animate({"top":"40%"},210,function(){
-			$(this).animate({"top":"150%"},500);
-		});
-	});
-	
-	
-}
-var listIndex = 0;
-var n;
-function caseListShow(){
-	$("#casePrev").click(function(){
-		if($("#case_sj #caseContent").is(":animated")) return false;
-		else{
-			if(listIndex<=0) return false;
-			else{
-				listIndex--;
-				listMove("right",listIndex);
-				if(listIndex<=0){
-					$(this).animate({"opacity":0.2},'slow').css("cursor","default");
+
+		function detailShow(currentIndex){
+			$(d).find(".up_arrow,.down_arrow").unbind("click");
+			$(d).find(".case_show_content:lt("+currentIndex+")").css("left","-150%");
+			$(d).find(".case_show_content:eq("+currentIndex+")").css("left","50%");
+			$(d).find(".up_arrow").bind("click",function(){
+				if (currentIndex - 1 >= 0) {
+					$(d).find(".case_show_content").eq(currentIndex).animate({
+						"left": "155%"
+					}, "slow", function() {
+						$(this).animate({
+							"left": "150%"
+						}, "slow");
+					});
+					$(d).find(".case_show_content").eq(currentIndex - 1).animate({
+						"left": "55%"
+					}, "slow", function() {
+						$(this).animate({
+							"left": "50%"
+						}, "slow");
+					});
+					currentIndex--;
 				}
-				$("#caseNext").animate({"opacity":1},'slow').css("cursor","pointer");
-			}
-		}
-	});
-	$("#caseNext").click(function(){
-		if($("#case_sj #caseContent").is(":animated")) return false;
-		else{
-			if(listIndex>=n-1) return false;
-			else{
-				listIndex++;
-				listMove("left",listIndex);
-				if(listIndex>=n-1){
-					$(this).animate({"opacity":0.2},'slow').css("cursor","default");
+			});
+
+			$(d).find(".down_arrow").bind("click",function(){
+				if (currentIndex + 1 < $(d).find(".case_show_content").size()) {
+					$(d).find(".case_show_content").eq(currentIndex).animate({
+						"left": "-155%"
+					}, "slow", function() {
+						$(this).animate({
+							"left": "-150%"
+						}, "slow");
+					});
+
+					$(d).find(".case_show_content").eq(currentIndex+1).animate({
+						"left": "45%"
+					}, "slow", function() {
+						$(this).animate({
+							"left": "50%"
+						}, "slow");
+					});
+					currentIndex++;
 				}
-				$("#casePrev").animate({"opacity":1},'slow').css("cursor","pointer");
-			}
+			});
 		}
-	});
-}
-function listMove(f,n){
-	if(f=="left"){
-		$("#case_sj #caseContent").animate({"left":-n*1016-80+"px"},"slow",function(){
-			$(this).animate({"left":-n*1016+"px"},"slow");
-		});
-	}else{
-		$("#case_sj #caseContent").animate({"left":-n*1016+80+"px"},"slow",function(){
-			$(this).animate({"left":-n*1016+"px"},"slow");
-		});
-	}
-}
-var detailIndex = 0;
-var count;
-function detailClick(){
-	var spacing = 848;
-	$("#caseDetailPrev").click(function(){
-		if($("#caseDetailContent ul").is(":animated")) return false;
-		else{
-			if(detailIndex<=0){ return false}
-			else{
-				detailIndex--;
-				detailMove("right",detailIndex);
-				if(detailIndex<=0){
-					$(this).animate({"opacity":0.2},'slow').css("cursor","default");
-				}
-				$("#caseDetailNext").animate({"opacity":1},'slow').css("cursor","pointer");
-			}
-		}
-	});
-	$("#caseDetailNext").click(function(){
-		if($("#caseDetailContent ul").is(":animated")) return false;
-		else{
-			if(detailIndex>=count-1){ return false}
-			else{
-				
-				detailIndex++;
-				detailMove("left",detailIndex);
-				if(detailIndex>=count-1){
-					$(this).animate({"opacity":0.2},'slow').css("cursor","default");
-				}
-				$("#caseDetailPrev").animate({"opacity":1},'slow').css("cursor","pointer");
-			}
-		}
-	});
-}
-function detailMove(f,j){
-	if(f=="left"){
-		$("#caseDetailContent ul").animate({"left":-j*848-80+"px"},"slow",function(){
-			$(this).animate({"left":-j*848+"px"},"slow");
-		});
-	}else{
-		$("#caseDetailContent ul").animate({"left":-j*848+80+"px"},"slow",function(){
-			$(this).animate({"left":-j*848+"px"},"slow");
-		});
 	}
 }
 
