@@ -218,15 +218,15 @@
 	margin-top: -20px;
 }
 .service .right_circle1 {
-	margin-left: 52px;
+	margin-left: -52px;
 }
 
 .service .right_circle2 {
-	margin-left: 52px;
+	margin-left: 2px;
 }
 
 .service .right_circle3 {
-	margin-left: 52px;
+	margin-left: 252px;
 }
 
 .service .circle_text {
@@ -240,7 +240,7 @@
 	color: #3a3a3a;
 	opacity: 0;
 }
-.service .right_circle .circle_text {
+.service .right_circle2 .circle_text,.service .right_circle3 .circle_text {
 	left: auto;
 	right: 200px;
 }
