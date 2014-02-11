@@ -333,9 +333,16 @@ function caseAnimate() {
 			});
 		});
 
-		var imgDivWidth = ($(d).find(".case_details_content .img a").width() + 10)*$(d).find(".case_details_content .img a").size()/2;
+		var imgSize = 0;
+		if($(d).find(".case_details_content .img a").size() % 2 == 0){
+			imgSize = $(d).find(".case_details_content .img a").size();
+		}else{
+			imgSize = $(d).find(".case_details_content .img a").size()+1;
+		}
+		var imgDivWidth = ($(d).find(".case_details_content .img a").width() + 10)*imgSize/2;
 
-		$(d).find(".case_details_content .img").width(imgDivWidth+10).css("position","relative");
+
+		$(d).find(".case_details_content .img").width(imgDivWidth+15).css("position","relative");
 		$(d).find(".down_arrow").bind("click",function(){
 			$(d).find(".case_details_content .img").animate({"left":$(d).find(".case_details_content").width()-imgDivWidth-100+"px"},"slow",function(){
 				$(this).animate({"left":$(d).find(".case_details_content").width()-imgDivWidth+"px"},"slow");

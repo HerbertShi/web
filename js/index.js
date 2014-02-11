@@ -137,3 +137,13 @@ function Execution(i) {
 			break;
 	}
 }
+
+function ImageResize(obj, maxWidth, maxHeight) {
+	var img = new Image();
+	img.src = obj.src;
+	var w = img.width;
+	var h = img.height;
+	obj.width = maxWidth;
+	obj.height = maxHeight;
+	$(obj).parent().css("text-align","center");
+}
