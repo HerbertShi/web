@@ -142,11 +142,11 @@ function serviceAnimate(){
 	});
 
 	$("#service #serviceLeft").animate({
-		"margin-left": "-230px",
+		"margin-left": "-480px",//-230
 		"opacity": 1
 	}, 1000, function() {
 		$(this).animate({
-			"margin-left": "-200px",
+			"margin-left": "-450px",//-200
 			"opacity": 1
 		}, 500);
 	});
@@ -159,7 +159,29 @@ function serviceAnimate(){
 			"margin-left": "100px",
 			"opacity": 1
 		}, 500);
-		serviceHover()
+		//serviceHover()
+	});
+
+	$("#service #serviceRight").animate({
+		"margin-left": "138px",
+		"opacity": 1
+	}, 1000, function() {
+		$(this).animate({
+			"margin-left": "100px",
+			"opacity": 1
+		}, 500);
+		//serviceHover()
+	});
+
+	$("#service #serviceRight").animate({
+		"margin-left": "138px",
+		"opacity": 1
+	}, 1000, function() {
+		$(this).animate({
+			"margin-left": "100px",
+			"opacity": 1
+		}, 500);
+		//serviceHover()
 	});
 	
 }

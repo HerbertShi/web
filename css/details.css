@@ -214,12 +214,21 @@
 	top: 167px;
 }
 .service .circle {
-	margin-left: -52px;
+	margin-left: -300px;/*-52*/
 	margin-top: -20px;
 }
-.service .right_circle {
+.service .right_circle1 {
 	margin-left: 52px;
 }
+
+.service .right_circle2 {
+	margin-left: 52px;
+}
+
+.service .right_circle3 {
+	margin-left: 52px;
+}
+
 .service .circle_text {
 	background: url(../images/service_text_bg.png) no-repeat;
 	width: 418px;
