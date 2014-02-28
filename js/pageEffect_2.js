@@ -25,13 +25,13 @@ function homeContent() {
 }
 
 function homeContentTitle(){
-	$("#home .title.idea").animate({"margin-left":"-290px"},1000,function(){
+	$("#home .title.idea").animate({"margin-left":"-290px"},1500,function(){
 		$(this).animate({"margin-left":"-270px"},500);
 	});
-	$("#home .title.quality").animate({"top":"20px"},1000,function(){
+	$("#home .title.quality").animate({"top":"20px"},1500,function(){
 		$(this).animate({"top":"40px"},500);
 	});
-	$("#home .title.ser").animate({"margin-left":"216px"},1000,function(){
+	$("#home .title.ser").animate({"margin-left":"216px"},1500,function(){
 		leftRightPic();
 		$(this).animate({"margin-left":"196px"},500);
 	});
@@ -288,6 +288,13 @@ function caseAnimate() {
 
 	function caseDetailAnimate(i) {
 		var d = $(".case_details").eq(i);
+		$(d).find(".dotted a").bind("mouseenter",function(){
+			$(this).siblings("p").hide();
+			$(this).siblings("p").eq($(this).index()).slideDown();
+		});
+		$(d).find(".dotted a").bind("mouseout",function(){
+			$(this).siblings("p").eq($(this).index()).slideUp();
+		});
 		$(d).find(".dotted a").bind("click", function() {
 			var detailsIndex = $(this).index();
 			var details = $(".case_details").eq(detailsIndex);

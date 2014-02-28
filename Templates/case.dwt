@@ -20,7 +20,7 @@
 <body>
 <!--header-->
 <div id="header">
-  <div id="menu"><!-- TemplateBeginEditable name="Logo" --><a class="logo" href="index.html"><img src="images/logo.png" /></a><!-- TemplateEndEditable --><a href="index.html" menuIndex="1" position="right" class="home">HOME</a><a href="about.html" menuIndex="2" position="right">关于QIS</a><a href="service.html" menuIndex="3" position="right">我们的服务</a><a href="case.html" menuIndex="4" position="right">案例展示</a><a href="activity.html" menuIndex="5" position="right">企业动态</a><a href="contact.html" menuIndex="6" position="right" class="contact">联系我们</a> </div>
+  <div id="menu"><!-- TemplateBeginEditable name="Logo" --><a class="logo" href="index.html"><img src="images/logo.png" width="142px" height="22px" /></a><!-- TemplateEndEditable --><a href="index.html" menuIndex="1" position="right" class="home">HOME</a><a href="about.html" menuIndex="2" position="right">关于QIS</a><a href="service.html" menuIndex="3" position="right">我们的服务</a><a href="case.html" menuIndex="4" position="right">案例展示</a><a href="activity.html" menuIndex="5" position="right">企业动态</a><a href="contact.html" menuIndex="6" position="right" class="contact">联系我们</a> </div>
 </div>
 <!--end header--> 
 <div id="Content">
