@@ -290,10 +290,10 @@ function caseAnimate() {
 		var d = $(".case_details").eq(i);
 		$(d).find(".dotted a").bind("mouseenter",function(){
 			$(this).siblings("p").hide();
-			$(this).siblings("p").eq($(this).index()).slideDown();
+			$(this).siblings("p").eq($(this).index()).slideDown(500);
 		});
 		$(d).find(".dotted a").bind("mouseout",function(){
-			$(this).siblings("p").eq($(this).index()).slideUp();
+			$(this).siblings("p").eq($(this).index()).slideUp(500);
 		});
 		$(d).find(".dotted a").bind("click", function() {
 			var detailsIndex = $(this).index();
@@ -346,8 +346,12 @@ function caseAnimate() {
 					}, "slow");
 				});
 			});
-
-			$(d).children(".case_show_content").animate({
+			var case_show_content = $(d).children(".case_show_content").eq($(this).index());
+			$(d).find(".case_show_content:lt("+$(this).index()+")").css("left","-150%");
+			$(case_show_content).css({
+				"display":"block",
+				"left":"50%"
+			}).animate({
 				"top": "-155%"
 			}, "slow", function() {
 				$(this).animate({
@@ -355,7 +359,9 @@ function caseAnimate() {
 				}, "slow", function() {
 					$(this).animate({
 						"top": "50%"
-					}, "slow");
+					}, "slow",function(){
+						$(d).children(".case_show_content").css("top","50%");
+					});
 				});
 			});
 		});
@@ -370,24 +376,47 @@ function caseAnimate() {
 
 
 		$(d).find(".case_details_content .img").width(imgDivWidth+15).css("position","relative");
-		$(d).find(".down_arrow").bind("click",function(){
-			$(d).find(".case_details_content .img").animate({"left":$(d).find(".case_details_content").width()-imgDivWidth-100+"px"},"slow",function(){
-				$(this).animate({"left":$(d).find(".case_details_content").width()-imgDivWidth+"px"},"slow");
-			});
-		});
 
-		$(d).find(".up_arrow").bind("click",function(){
-			$(d).find(".case_details_content .img").animate({"left":"100px"},"slow",function(){
-				$(this).animate({"left":"0px"},"slow");
-			});
-		});
+		bindArraw();
 
-		
+		function bindArraw(){
+			$(d).find(".up_arrow,.down_arrow,.back_arrow").unbind("click");
+			$(d).find(".down_arrow").bind("click", function() {
+				$(d).find(".case_details_content .img").animate({
+					"left": $(d).find(".case_details_content").width() - imgDivWidth - 100 + "px"
+				}, "slow", function() {
+					$(this).animate({
+						"left": $(d).find(".case_details_content").width() - imgDivWidth + "px"
+					}, "slow");
+				});
+			});
+
+			$(d).find(".up_arrow").bind("click", function() {
+				$(d).find(".case_details_content .img").animate({
+					"left": "100px"
+				}, "slow", function() {
+					$(this).animate({
+						"left": "0px"
+					}, "slow");
+				});
+			});
+
+			$(d).find(".back_arrow").bind("click", function() {
+				$("#case .case").animate({
+					"top": "3%"
+				}, 'slow', function() {
+					$(this).animate({
+						"top": "0%"
+					}, 'slow');
+				});
+				$(d).animate({
+					"top": "100%"
+				}, 'slow');
+			});
+		}
 
 		function detailShow(currentIndex){
-			$(d).find(".up_arrow,.down_arrow").unbind("click");
-			$(d).find(".case_show_content:lt("+currentIndex+")").css("left","-150%");
-			$(d).find(".case_show_content:eq("+currentIndex+")").css("left","50%");
+			$(d).find(".up_arrow,.down_arrow,.back_arrow").unbind("click");
 			$(d).find(".up_arrow").bind("click",function(){
 				if (currentIndex - 1 >= 0) {
 					$(d).find(".case_show_content").eq(currentIndex).animate({
@@ -395,9 +424,11 @@ function caseAnimate() {
 					}, "slow", function() {
 						$(this).animate({
 							"left": "150%"
-						}, "slow");
+						}, "slow",function(){
+							$(this).hide();
+						});
 					});
-					$(d).find(".case_show_content").eq(currentIndex - 1).animate({
+					$(d).find(".case_show_content").eq(currentIndex - 1).show().animate({
 						"left": "55%"
 					}, "slow", function() {
 						$(this).animate({
@@ -415,10 +446,12 @@ function caseAnimate() {
 					}, "slow", function() {
 						$(this).animate({
 							"left": "-150%"
-						}, "slow");
+						}, "slow",function(){
+							$(this).hide();
+						});
 					});
 
-					$(d).find(".case_show_content").eq(currentIndex+1).animate({
+					$(d).find(".case_show_content").eq(currentIndex+1).show().animate({
 						"left": "45%"
 					}, "slow", function() {
 						$(this).animate({
@@ -427,6 +460,40 @@ function caseAnimate() {
 					});
 					currentIndex++;
 				}
+			});
+
+			$(d).find(".back_arrow").bind("click", function() {
+				var case_show_content = $(d).children(".case_show_content").eq(currentIndex);
+				$(case_show_content).animate({
+					"top": "55%"
+				}, "slow", function() {
+					$(this).animate({
+						"top": "-155%"
+					}, "slow", function() {
+						$(this).animate({
+							"top": "-150%"
+						}, "slow",function(){
+							$(d).children(".case_show_content").hide().css({
+								"left": "150%",
+								"top": "-150%"
+							});
+						});
+					});
+				});
+
+				$(d).children(".title,.case_details_content").animate({
+					"top": "155%"
+				}, "slow", function() {
+					$(this).animate({
+						"top": "45%"
+					}, "slow", function() {
+						$(this).animate({
+							"top": "50%"
+						}, "slow",function(){
+							bindArraw();
+						});
+					});
+				});
 			});
 		}
 	}
