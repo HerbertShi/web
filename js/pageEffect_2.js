@@ -52,20 +52,20 @@ function homeContetAnimate() {
 
 	function move() {
 		aIndex++;
-		$("#home .dotted .text").fadeOut();
-		$("#home .dotted").fadeOut();
+		$("#home .dotted .text").fadeOut(1000);
+		$("#home .dotted").fadeOut(1000);
 		switch (aIndex) {
 			case 1:
-				$("#home .dotted.idea .text").fadeIn();
-				$("#home .dotted.idea").fadeIn();
+				$("#home .dotted.idea .text").fadeIn(1500);
+				$("#home .dotted.idea").fadeIn(1500);
 				break
 			case 2:
-				$("#home .dotted.ser .text").fadeIn();
-				$("#home .dotted.ser").fadeIn();
+				$("#home .dotted.ser .text").fadeIn(1500);
+				$("#home .dotted.ser").fadeIn(1500);
 				break;
 			case 3:
-				$("#home .dotted.quality .text").fadeIn();
-				$("#home .dotted.quality").fadeIn();
+				$("#home .dotted.quality .text").fadeIn(1500);
+				$("#home .dotted.quality").fadeIn(1500);
 				aIndex = 0;
 				break;
 		}
